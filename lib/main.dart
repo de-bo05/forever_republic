@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:forever_republic/pages/PrimaryScreenPage.dart';
 import 'package:forever_republic/supabase/supabase_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -41,9 +42,9 @@ void main() async {
         fontFamily: GoogleFonts.robotoMono().fontFamily,
         primarySwatch: getMainBlueSwatch),
     debugShowCheckedModeBanner: false,
-    initialRoute: "",
+    initialRoute: "/PrimaryScreenPage",
     routes: {
-
+    "/PrimaryScreenPage" : (context) => const PrimaryScreenPage(),
     },
   ));
 }
