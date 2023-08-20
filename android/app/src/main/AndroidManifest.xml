@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="forever_republic"
+        android:label="Forever Republic"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
