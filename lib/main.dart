@@ -38,7 +38,7 @@ void main() async {
     builder: setMaxTextScaleFactor(maxFactor: 1.5),
     scrollBehavior: CustomScrollBehaviour(),
     theme: ThemeData(
-        fontFamily: GoogleFonts.russoOne().fontFamily,
+        fontFamily: GoogleFonts.robotoMono().fontFamily,
         primarySwatch: getMainBlueSwatch),
     debugShowCheckedModeBanner: false,
     initialRoute: "",
