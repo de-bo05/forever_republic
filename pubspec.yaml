@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: '>=3.0.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -30,11 +30,37 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_launcher_icons: ^0.13.1
+
+  flutter_native_splash: ^2.2.19
+  firebase_core: ^2.12.0
+  firebase_auth: ^4.6.0
+  fluttertoast: ^8.2.1
+  google_fonts: ^4.0.4
+  google_nav_bar: ^5.0.6
+  smooth_page_indicator: ^1.1.0
+  http: ^0.13.5
+  flutterwave_standard: ^1.0.7
+  like_button: ^2.0.5
+  lottie: ^2.3.2
+  flutter_screenutil: ^5.8.2
+  flutter_exit_app: ^1.1.2
+  intl: ^0.18.1
+  provider: ^6.0.5
+  flutter_windowmanager: ^0.2.0
+  audioplayers: ^4.1.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  supabase_flutter: ^1.6.2
+  connectivity: ^3.0.6
+  clipboard: ^0.1.3
+  encrypt: ^5.0.1
+  hidden_drawer_menu: ^3.0.1
+
+
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +77,31 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+
+
+flutter_native_splash:
+  color: '#FFFFFF'
+  color_dark: "#FFFFFF"
+  android: true
+  ios: true
+  web: true
+  fullscreen: true
+  android_12:
+    color: '#FFFFFF'
+    color_dark: "#FFFFFF"
+
+
+flutter_launcher_icons:
+  color: '#FFFFFF'
+  adaptive_icon_color:  '#FFFFFF'
+  image_path: "assets/logo/stock_manager_logo.png"
+  adaptive_icon_background: "assets/logo/stock_manager_logo_bg.png"
+  adaptive_icon_foreground:  "assets/logo/stock_manager_logo.png"
+  android: "launcher_icon"
+  icon_size: 48
+  ios: true
+
+
 flutter:
 
   # The following line ensures that the Material Icons font is
