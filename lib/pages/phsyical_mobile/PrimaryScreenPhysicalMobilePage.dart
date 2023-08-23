@@ -1,8 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:forever_republic/main.dart';
 
 import '../../data/NavigationData.dart';
+import 'HomeScreenPhysicalMobilePage.dart';
 
 class PrimaryScreenPhysicalMobilePage extends StatefulWidget {
   const PrimaryScreenPhysicalMobilePage({Key? key}) : super(key: key);
@@ -30,7 +32,7 @@ class _PrimaryScreenPhysicalMobilePageState extends State<PrimaryScreenPhysicalM
 
 
   List<NavigationData> get navigationBars => [
-    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"), getText("Page $currentIndex")),
+    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"), const HomeScreenPhysicalMobilePage()),
     NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.list_alt_outlined),label: "Category"), getText("Page $currentIndex")),
     NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded),label: "Account"), getText("Page $currentIndex")),
     NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.help),label: "Help"), getText("Page $currentIndex"))
@@ -48,18 +50,28 @@ class _PrimaryScreenPhysicalMobilePageState extends State<PrimaryScreenPhysicalM
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body:  Center(
-        child: PageView(
-          controller: pageController,
-          onPageChanged: navigateBar,
-          children: navigationBars.map((barItem) => barItem.bottomNavigationBarPage).toList(),
+    return  SafeArea(
+      child: Scaffold(
+        body:  Center(
+          child: Column(
+            children: [
+              Expanded(
+                child: PageView(
+                  controller: pageController,
+                  onPageChanged: navigateBar,
+                  children: navigationBars.map((barItem) => Center(child: barItem.bottomNavigationBarPage)).toList(),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap:navigateBar,
-        items: navigationBars.map((barItem) => barItem.bottomNavigationBarItem).toList(),
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.black,
+          unselectedItemColor: const Color(getDarkGreyColor),
+          currentIndex: currentIndex,
+          onTap:navigateBar,
+          items: navigationBars.map((barItem) => barItem.bottomNavigationBarItem).toList(),
+        ),
       ),
     );
   }
