@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../components/CustomFullSearchableTitleCard.dart';
+import '../../components/CustomShortSearchableTitleCard.dart';
 
 class AccountScreenPhysicalMobilePage extends StatefulWidget {
   const AccountScreenPhysicalMobilePage({super.key});
@@ -17,7 +18,7 @@ class _AccountScreenPhysicalMobilePageState extends State<AccountScreenPhysicalM
     return const Column(
       children: [
 
-        CustomFullSearchableTitleCard()
+        CustomShortSearchableTitleCard()
 
       ],
     );
