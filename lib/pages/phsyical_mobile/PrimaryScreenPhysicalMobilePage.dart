@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/main.dart';
 
 import '../../data/NavigationData.dart';
+import 'AccountScreenPhysicalMobilePage.dart';
 import 'CategoryScreenPhysicalMobilePage.dart';
+import 'HelpScreenPhysicalMobilePage.dart';
 import 'HomeScreenPhysicalMobilePage.dart';
 
 class PrimaryScreenPhysicalMobilePage extends StatefulWidget {
@@ -18,24 +20,12 @@ class _PrimaryScreenPhysicalMobilePageState extends State<PrimaryScreenPhysicalM
 
   int currentIndex = 0;
 
-  @override
-  void initState() {
-    super.initState();
-
-
-  }
-
-
-
-  Widget getText( String text){
-    return Text("Page $currentIndex",style: const TextStyle(color: Colors.black),);}
-
 
   List<NavigationData> get navigationBars => [
     NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"), const HomeScreenPhysicalMobilePage()),
     NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.list_alt_outlined),label: "Category"), const CategoryScreenPhysicalMobilePage()),
-    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded),label: "Account"), getText("Page $currentIndex")),
-    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.help_outline_outlined),label: "Help"), getText("Page $currentIndex"))
+    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded),label: "Account"), const AccountScreenPhysicalMobilePage()),
+    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.help_outline_outlined),label: "Help"), const HelpScreenPhysicalMobilePage())
   ];
 
 
