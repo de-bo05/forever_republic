@@ -14,7 +14,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(color: Colors.black.withOpacity(0.8)),
       child: Padding(
-        padding: const EdgeInsets.only(left: 8, top: 6, bottom: 6),
+        padding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -45,7 +45,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
                 IconButton(
                     onPressed: onTapCart,
                     icon: const Icon(
-                      Icons.shopping_cart,
+                      Icons.shopping_cart_outlined,
                       size: 25,
                       color: Colors.white,
                     )),
