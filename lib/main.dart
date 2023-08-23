@@ -12,9 +12,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Set The navigator and title bar color
-  // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-  //     systemNavigationBarColor: Colors.black, statusBarColor: Colors.black));
-
+  SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.black, statusBarColor: Colors.grey[800]));
   // Lock to only portrait
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

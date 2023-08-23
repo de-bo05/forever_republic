@@ -14,11 +14,10 @@ class HomeScreenPhysicalMobilePage extends StatefulWidget {
 class _HomeScreenPhysicalMobilePageState extends State<HomeScreenPhysicalMobilePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
 
         CustomFullSearchableTitleCard()
-
 
       ],
     );

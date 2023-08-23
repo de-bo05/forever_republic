@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/main.dart';
 
 import '../../data/NavigationData.dart';
+import 'CategoryScreenPhysicalMobilePage.dart';
 import 'HomeScreenPhysicalMobilePage.dart';
 
 class PrimaryScreenPhysicalMobilePage extends StatefulWidget {
@@ -16,7 +17,6 @@ class PrimaryScreenPhysicalMobilePage extends StatefulWidget {
 class _PrimaryScreenPhysicalMobilePageState extends State<PrimaryScreenPhysicalMobilePage> {
 
   int currentIndex = 0;
-  PageController pageController = PageController();
 
   @override
   void initState() {
@@ -33,9 +33,9 @@ class _PrimaryScreenPhysicalMobilePageState extends State<PrimaryScreenPhysicalM
 
   List<NavigationData> get navigationBars => [
     NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"), const HomeScreenPhysicalMobilePage()),
-    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.list_alt_outlined),label: "Category"), getText("Page $currentIndex")),
+    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.list_alt_outlined),label: "Category"), const CategoryScreenPhysicalMobilePage()),
     NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded),label: "Account"), getText("Page $currentIndex")),
-    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.help),label: "Help"), getText("Page $currentIndex"))
+    NavigationData(const BottomNavigationBarItem(icon: Icon(Icons.help_outline_outlined),label: "Help"), getText("Page $currentIndex"))
   ];
 
 
@@ -43,10 +43,7 @@ class _PrimaryScreenPhysicalMobilePageState extends State<PrimaryScreenPhysicalM
     setState(() {
       currentIndex = index;
     });
-    pageController.jumpToPage(index);
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -56,17 +53,16 @@ class _PrimaryScreenPhysicalMobilePageState extends State<PrimaryScreenPhysicalM
           child: Column(
             children: [
               Expanded(
-                child: PageView(
-                  controller: pageController,
-                  onPageChanged: navigateBar,
-                  children: navigationBars.map((barItem) => Center(child: barItem.bottomNavigationBarPage)).toList(),
-                ),
+                child: navigationBars.map((barItem) => Center(child: barItem.bottomNavigationBarPage)).toList()[currentIndex]
               ),
             ],
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
+          unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
           selectedItemColor: Colors.black,
+          type: BottomNavigationBarType.fixed,
           unselectedItemColor: const Color(getDarkGreyColor),
           currentIndex: currentIndex,
           onTap:navigateBar,
