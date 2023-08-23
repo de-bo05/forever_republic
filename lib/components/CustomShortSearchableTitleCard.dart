@@ -22,7 +22,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
-                  fontSize: 24),
+                  fontSize: 18),
             )),
 
             //  Search - Cart
@@ -37,6 +37,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
                       color: Colors.white,
                     )),
                 //  Cart
+                SizedBox(width: 4,),
                 IconButton(
                     onPressed: () {},
                     icon: const Icon(
