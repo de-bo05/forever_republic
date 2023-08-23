@@ -3,26 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/main.dart';
 
 class CustomShortSearchableTitleCard extends StatelessWidget {
-  const CustomShortSearchableTitleCard({super.key});
+  final String pageTitle;
+  final Function()? onTapSearch;
+  final Function()? onTapCart;
+
+  const CustomShortSearchableTitleCard({super.key, required this.pageTitle, this.onTapSearch, this.onTapCart});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: Colors.black.withOpacity(0.8)),
       child: Padding(
-        padding: const EdgeInsets.only(left: 16, top: 6, bottom: 6,right: 8),
+        padding: const EdgeInsets.only(left: 8, top: 6, bottom: 6),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //  Page Title
 
-            const Expanded(
+             Expanded(
                 child: Text(
-              "Account",
-              style: TextStyle(
+              pageTitle,
+              style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
-                  fontSize: 16),
+                  fontSize: 18),
             )),
 
             //  Search - Cart
@@ -30,7 +34,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
               children: [
                 //  Search
                 IconButton(
-                    onPressed: () {},
+                    onPressed: onTapSearch,
                     icon: const Icon(
                       Icons.search_rounded,
                       size: 25,
@@ -39,7 +43,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
                 //  Cart
                 const SizedBox(width: 4,),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: onTapCart,
                     icon: const Icon(
                       Icons.shopping_cart,
                       size: 25,

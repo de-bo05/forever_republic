@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/main.dart';
 
 class CustomFullSearchableTitleCard extends StatelessWidget {
-  const CustomFullSearchableTitleCard({super.key});
+  final Function()? onTapSearch;
+  final Function()? onTapCart;
+  const CustomFullSearchableTitleCard({super.key, this.onTapSearch, this.onTapCart});
 
   @override
   Widget build(BuildContext context) {
@@ -16,35 +18,38 @@ class CustomFullSearchableTitleCard extends StatelessWidget {
           children: [
             //  Click Search
             Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
-                  child: Row(
-                    children: [
-                      // Search Display Icon
+              child: GestureDetector(
+                onTap: onTapSearch,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+                    child: Row(
+                      children: [
+                        // Search Display Icon
 
-                      Icon(
-                        Icons.search_rounded,
-                        size: 25,
-                        color: Colors.black.withOpacity(0.7),
-                      ),
+                        Icon(
+                          Icons.search_rounded,
+                          size: 25,
+                          color: Colors.black.withOpacity(0.7),
+                        ),
 
-                      // Search Display Text
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "Search Store",
-                        style: TextStyle(
-                            color:
-                                 Colors.black.withOpacity(0.7),
-                            fontWeight: FontWeight.w600),
-                      )
-                    ],
+                        // Search Display Text
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "Search Store",
+                          style: TextStyle(
+                              color:
+                                   Colors.black.withOpacity(0.7),
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -52,7 +57,7 @@ class CustomFullSearchableTitleCard extends StatelessWidget {
 
             //   Cart
             IconButton(
-                onPressed: () {},
+                onPressed: onTapCart,
                 icon: const Icon(
                   Icons.shopping_cart,
                   size: 25,

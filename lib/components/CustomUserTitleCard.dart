@@ -4,7 +4,11 @@ import 'package:forever_republic/components/CustomOnClickContainer.dart';
 import 'package:forever_republic/main.dart';
 
 class CustomUserTitleCard extends StatelessWidget {
-  const CustomUserTitleCard({super.key});
+  final String? userFirstName;
+  final String? userEmail;
+  final Function()? onTapLogin;
+  final Function()? onTapLogout;
+  const CustomUserTitleCard({super.key, this.userFirstName, this.userEmail, this.onTapLogin, this.onTapLogout});
 
   @override
   Widget build(BuildContext context) {
@@ -17,24 +21,24 @@ class CustomUserTitleCard extends StatelessWidget {
           children: [
             //  Welcome Title
 
-            const Column(
+             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //   Welcome
 
                 Text(
-                  "Welcome!",
-                  style: TextStyle(
+                  userFirstName != null ? "Welcome $userFirstName" : "Welcome!",
+                  style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 15),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
-                Text(
-                  "Enter your account",
-                  style: TextStyle(
+                 Text(
+                  userEmail != null ? (userEmail ?? ""):  "Enter your account",
+                  style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 13),
@@ -45,15 +49,13 @@ class CustomUserTitleCard extends StatelessWidget {
             //  Search - Cart
 
             CustomOnClickContainer(
-              onTap: (){
-
-              },
+              onTap: userEmail == null ? onTapLogin : onTapLogout,
                 borderRadius: BorderRadius.circular(8),
                 defaultColor: Colors.black,
                 clickedColor: Colors.black.withOpacity(0.3),
-                child: const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text("LOGIN",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
+                child:  Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Text(userEmail == null ?  "LOGIN" : "LOGOUT",style: const TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
                 ))
           ],
         ),

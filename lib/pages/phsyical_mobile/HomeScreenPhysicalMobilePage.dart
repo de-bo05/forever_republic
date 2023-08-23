@@ -1,8 +1,10 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../components/CustomFullSearchableTitleCard.dart';
+import 'CartScreenPhysicalMobilePage.dart';
 
 class HomeScreenPhysicalMobilePage extends StatefulWidget {
   const HomeScreenPhysicalMobilePage({super.key});
@@ -12,12 +14,20 @@ class HomeScreenPhysicalMobilePage extends StatefulWidget {
 }
 
 class _HomeScreenPhysicalMobilePageState extends State<HomeScreenPhysicalMobilePage> {
+
+  void onTapSearch(){
+
+  }
+  void onTapCart(){
+    Navigator.push(context, MaterialPageRoute(builder: (builder)=> const CartScreenPhysicalMobilePage()));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
 
-        CustomFullSearchableTitleCard()
+        CustomFullSearchableTitleCard(onTapCart: onTapCart,onTapSearch: onTapSearch,)
 
       ],
     );
