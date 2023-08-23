@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:forever_republic/pages/PrimaryScreenPage.dart';
+import 'package:forever_republic/pages/phsyical_mobile/PrimaryScreenPhysicalMobilePage.dart';
 import 'package:forever_republic/supabase/supabase_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,7 +22,7 @@ void main() async {
   ]);
 
   // Supabase
-  // await SupabaseConfig.initialize;
+  await SupabaseConfig.initialize;
 
   // Local Database
   var localDatabase = LocalDatabase();
@@ -44,7 +44,7 @@ void main() async {
     debugShowCheckedModeBanner: false,
     initialRoute: "/PrimaryScreenPage",
     routes: {
-    "/PrimaryScreenPage" : (context) => const PrimaryScreenPage(),
+    "/PrimaryScreenPage" : (context) => const PrimaryScreenPhysicalMobilePage(),
     },
   ));
 }
