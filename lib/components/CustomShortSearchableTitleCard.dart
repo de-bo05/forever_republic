@@ -10,7 +10,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(color: Colors.black.withOpacity(0.8)),
       child: Padding(
-        padding: const EdgeInsets.only(left: 8, top: 6, bottom: 6),
+        padding: const EdgeInsets.only(left: 16, top: 6, bottom: 6,right: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -22,7 +22,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
-                  fontSize: 18),
+                  fontSize: 16),
             )),
 
             //  Search - Cart
@@ -37,7 +37,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
                       color: Colors.white,
                     )),
                 //  Cart
-                SizedBox(width: 4,),
+                const SizedBox(width: 4,),
                 IconButton(
                     onPressed: () {},
                     icon: const Icon(

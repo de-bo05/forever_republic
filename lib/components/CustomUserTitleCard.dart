@@ -11,39 +11,35 @@ class CustomUserTitleCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(color: Colors.black.withOpacity(0.8)),
       child: Padding(
-        padding: const EdgeInsets.only(left: 8, top: 16, bottom: 6),
+        padding: const EdgeInsets.only(left: 16, top: 16, bottom: 10,right: 16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //  Welcome Title
 
-            const Expanded(
-              flex: 2,
-              child: Column(
-                children: [
-                  //   Welcome
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //   Welcome
 
-                  Flexible(
-                      child: Text(
-                    "Welcome!",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
-                  )),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Flexible(
-                      child: Text(
-                    "Enter your account",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
-                  )),
-                ],
-              ),
+                Text(
+                  "Welcome!",
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15),
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Text(
+                  "Enter your account",
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 13),
+                ),
+              ],
             ),
 
             //  Search - Cart
@@ -52,9 +48,13 @@ class CustomUserTitleCard extends StatelessWidget {
               onTap: (){
 
               },
+                borderRadius: BorderRadius.circular(8),
                 defaultColor: Colors.black,
-                clickedColor: Colors.black.withOpacity(0.8),
-                child: const Text("LOGIN",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w600),))
+                clickedColor: Colors.black.withOpacity(0.3),
+                child: const Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Text("LOGIN",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
+                ))
           ],
         ),
       ),

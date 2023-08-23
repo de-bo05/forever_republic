@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../components/CustomFullSearchableTitleCard.dart';
+import '../../components/CustomShortSearchableTitleCard.dart';
 
 class HelpScreenPhysicalMobilePage extends StatefulWidget {
   const HelpScreenPhysicalMobilePage({super.key});
@@ -17,7 +18,7 @@ class _HelpScreenPhysicalMobilePageState extends State<HelpScreenPhysicalMobileP
     return const Column(
       children: [
 
-        CustomFullSearchableTitleCard()
+        CustomShortSearchableTitleCard(),
 
       ],
     );
