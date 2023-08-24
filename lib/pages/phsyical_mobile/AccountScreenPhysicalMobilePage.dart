@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:forever_republic/pages/phsyical_mobile/CartScreenPhysicalMobilePage.dart';
+import 'package:forever_republic/pages/phsyical_mobile/LoginScreenPhysicalMobilePage.dart';
 
 import '../../components/CustomFullSearchableTitleCard.dart';
 import '../../components/CustomShortSearchableTitleCard.dart';
@@ -25,9 +26,12 @@ class _AccountScreenPhysicalMobilePageState extends State<AccountScreenPhysicalM
    Navigator.push(context, MaterialPageRoute(builder: (builder)=> const CartScreenPhysicalMobilePage()));
   }
   void onTapLogin(){
-
+    Navigator.push(context, MaterialPageRoute(builder: (builder)=> const LoginScreenPhysicalMobilePage()));
   }
   void onTapLogout(){
+
+  }
+  void onTapVerify(){
 
   }
 
@@ -37,7 +41,7 @@ class _AccountScreenPhysicalMobilePageState extends State<AccountScreenPhysicalM
       children: [
 
         CustomShortSearchableTitleCard(pageTitle: "Account",onTapSearch: onTapSearch,onTapCart: onTapCart,),
-         CustomUserTitleCard(userFirstName: null,userEmail: null,onTapLogin: onTapLogin,onTapLogout: onTapLogout,)
+         CustomUserTitleCard(userFirstName: null,userEmail: null,onTapLogin: onTapLogin,onTapVerify: onTapVerify,verified: false,)
 
       ],
     );

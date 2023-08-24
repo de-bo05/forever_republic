@@ -6,9 +6,10 @@ import 'package:forever_republic/main.dart';
 class CustomUserTitleCard extends StatelessWidget {
   final String? userFirstName;
   final String? userEmail;
+  final bool verified;
   final Function()? onTapLogin;
-  final Function()? onTapLogout;
-  const CustomUserTitleCard({super.key, this.userFirstName, this.userEmail, this.onTapLogin, this.onTapLogout});
+  final Function()? onTapVerify;
+  const CustomUserTitleCard({super.key, this.userFirstName, this.userEmail, this.onTapLogin, this.onTapVerify, required this.verified});
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +49,29 @@ class CustomUserTitleCard extends StatelessWidget {
 
             //  Search - Cart
 
-            CustomOnClickContainer(
-              onTap: userEmail == null ? onTapLogin : onTapLogout,
-                borderRadius: BorderRadius.circular(8),
-                defaultColor: Colors.black,
-                clickedColor: Colors.black.withOpacity(0.3),
-                child:  Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Text(userEmail == null ?  "LOGIN" : "LOGOUT",style: const TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
-                ))
+            Row(
+              children: [
+                userEmail == null ? CustomOnClickContainer(
+                    onTap: onTapLogin ,
+                    borderRadius: BorderRadius.circular(8),
+                    defaultColor: Colors.black,
+                    clickedColor: Colors.black.withOpacity(0.3),
+                    child:  const Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text("LOGIN" ,style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
+                    )) : const SizedBox(),
+
+                verified && userEmail != null || userEmail == null ? const SizedBox() : CustomOnClickContainer(
+                    onTap:  onTapVerify,
+                    borderRadius: BorderRadius.circular(8),
+                    defaultColor: Colors.black,
+                    clickedColor: Colors.black.withOpacity(0.3),
+                    child:  const Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text("VERIFY" ,style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
+                    ))
+              ],
+            )
           ],
         ),
       ),

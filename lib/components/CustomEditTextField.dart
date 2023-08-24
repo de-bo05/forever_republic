@@ -71,10 +71,10 @@ class CustomEditTextFieldState extends State<CustomEditTextField> {
       obscureText: getObscured,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.transparent),
+            borderSide: const BorderSide(color: Colors.black),
             borderRadius: BorderRadius.circular(10)),
         focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(getMainBlueColor)),
+            borderSide: const BorderSide(color: Colors.black),
             borderRadius: BorderRadius.circular(10)),
         suffixIcon: !change
             ? widget.controller.text.isNotEmpty
@@ -85,7 +85,7 @@ class CustomEditTextFieldState extends State<CustomEditTextField> {
         hintText: widget.hintText,
         hintStyle: const TextStyle(color: Color(getLighterGreyTextColor)),
         fillColor: const Color(getLightGreyColor),
-        filled: true,
+        filled: false,
       ),
       style: TextStyle(
         fontSize: widget.textSize,
