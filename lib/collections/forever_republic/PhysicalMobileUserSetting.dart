@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/components/CustomCollectionCard.dart';
 import 'package:hive/hive.dart';
 
-class PhysicalMobileSetting extends StatelessWidget {
-  const PhysicalMobileSetting({super.key});
+class PhysicalMobileUserSetting extends StatelessWidget {
+  const PhysicalMobileUserSetting({super.key});
 
 
   void clickAddressBook(){}
@@ -29,6 +29,7 @@ class PhysicalMobileSetting extends StatelessWidget {
               onClick: clickAddressBook,
               clickedColor: Colors.grey.withOpacity(0.3),
               text: "Address book",
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               gap: 24,
               endIcon: const Icon(
                 Icons.arrow_forward_ios_rounded,
@@ -40,7 +41,7 @@ class PhysicalMobileSetting extends StatelessWidget {
             CustomCollectionCard(
               onClick: clickCloseAccount,
               clickedColor: Colors.grey.withOpacity(0.3),
-
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Account Management",
               gap: 24,
               endIcon: const Icon(
@@ -53,7 +54,7 @@ class PhysicalMobileSetting extends StatelessWidget {
             CustomCollectionCard(
               onClick: clickRatingAndReview,
               clickedColor: Colors.grey.withOpacity(0.3),
-
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Close Account",
               gap: 24,
               endIcon: const Icon(

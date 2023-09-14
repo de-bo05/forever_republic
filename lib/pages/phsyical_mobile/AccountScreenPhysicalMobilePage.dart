@@ -7,7 +7,7 @@ import 'package:forever_republic/main.dart';
 import 'package:forever_republic/pages/phsyical_mobile/CartScreenPhysicalMobilePage.dart';
 import 'package:forever_republic/pages/phsyical_mobile/LoginScreenPhysicalMobilePage.dart';
 
-import '../../collections/forever_republic/PhysicalMobileSetting.dart';
+import '../../collections/forever_republic/PhysicalMobileUserSetting.dart';
 import '../../components/CustomFullSearchableTitleCard.dart';
 import '../../components/CustomShortSearchableTitleCard.dart';
 import '../../components/CustomUserTitleCard.dart';
@@ -133,7 +133,7 @@ class _AccountScreenPhysicalMobilePageState
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
                     children: [
-                      Expanded(child: PhysicalMobileSetting()),
+                      Expanded(child: PhysicalMobileUserSetting()),
                     ],
                   ),
                 ),

@@ -32,6 +32,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               onClick: clickOrder,
               clickedColor: Colors.grey.withOpacity(0.3),
               text: "Orders",
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               gap: 24,
               startIcon: const Icon(Icons.storefront_sharp),
               endIcon: const Icon(
@@ -44,7 +45,7 @@ class PhysicalMobileAccount extends StatelessWidget {
             CustomCollectionCard(
               onClick: clickInbox,
               clickedColor: Colors.grey.withOpacity(0.3),
-
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Inbox",
               gap: 24,
               startIcon: const Icon(Icons.mail),
@@ -58,7 +59,7 @@ class PhysicalMobileAccount extends StatelessWidget {
             CustomCollectionCard(
               onClick: clickRatingAndReview,
               clickedColor: Colors.grey.withOpacity(0.3),
-
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Rating & Reviews",
               gap: 24,
               startIcon: const Icon(Icons.rate_review),
@@ -72,7 +73,7 @@ class PhysicalMobileAccount extends StatelessWidget {
             CustomCollectionCard(
               onClick: clickVouchers,
               clickedColor: Colors.grey.withOpacity(0.3),
-
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Vouchers",
               gap: 24,
               startIcon: const Icon(Icons.card_giftcard_outlined),
@@ -86,7 +87,7 @@ class PhysicalMobileAccount extends StatelessWidget {
             CustomCollectionCard(
               onClick: clickSavedItems,
               clickedColor: Colors.grey.withOpacity(0.3),
-
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Saved Items",
               gap: 24,
               startIcon: const Icon(Icons.favorite_border),
@@ -100,7 +101,7 @@ class PhysicalMobileAccount extends StatelessWidget {
             CustomCollectionCard(
               onClick: clickRecentlyViewed,
               clickedColor: Colors.grey.withOpacity(0.3),
-
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Recently Viewed",
               gap: 24,
               startIcon: const Icon(Icons.history),
@@ -116,6 +117,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               onClick: clickRecentlySearched,
               clickedColor: Colors.grey.withOpacity(0.3),
               text: "Recently Searched",
+              textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               gap: 24,
               startIcon: const Icon(Icons.search),
               endIcon: const Icon(
