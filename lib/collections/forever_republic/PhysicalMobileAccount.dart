@@ -3,21 +3,65 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/components/CustomCollectionCard.dart';
 import 'package:hive/hive.dart';
 
+import '../../pages/phsyical_mobile/InboxScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/OrderScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/RatingAndReviewScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/RecentlySearchedScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/RecentlyViewedScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/SavedItemScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/VoucherScreenPhysicalMobilePage.dart';
+
 class PhysicalMobileAccount extends StatelessWidget {
   const PhysicalMobileAccount({super.key});
 
 
-  void clickOrder(){}
-  void clickInbox(){}
-  void clickRatingAndReview(){}
-  void clickVouchers(){}
-  void clickSavedItems(){}
-  void clickRecentlyViewed(){}
-  void clickRecentlySearched(){}
-
-
   @override
   Widget build(BuildContext context) {
+
+    void clickOrder(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const OrderScreenPhysicalMobilePage()));
+    }
+    void clickInbox(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const InboxScreenPhysicalMobilePage()));
+    }
+    void clickRatingAndReview(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const RatingAndReviewScreenPhysicalMobilePage()));
+    }
+    void clickVouchers(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const VoucherScreenPhysicalMobilePage()));
+    }
+    void clickSavedItems(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const SavedItemScreenPhysicalMobilePage()));
+    }
+    void clickRecentlyViewed(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const RecentlyViewedScreenPhysicalMobilePage()));
+    }
+    void clickRecentlySearched(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const RecentlySearchedScreenPhysicalMobilePage()));
+    }
+
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
       child: Container(
@@ -35,7 +79,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               gap: 24,
               startIcon: const Icon(Icons.storefront_sharp),
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -49,7 +93,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               text: "Inbox",
               gap: 24,
               startIcon: const Icon(Icons.mail),
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -63,7 +107,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               text: "Rating & Reviews",
               gap: 24,
               startIcon: const Icon(Icons.rate_review),
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -77,7 +121,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               text: "Vouchers",
               gap: 24,
               startIcon: const Icon(Icons.card_giftcard_outlined),
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -91,7 +135,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               text: "Saved Items",
               gap: 24,
               startIcon: const Icon(Icons.favorite_border),
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -105,7 +149,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               text: "Recently Viewed",
               gap: 24,
               startIcon: const Icon(Icons.history),
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -120,7 +164,7 @@ class PhysicalMobileAccount extends StatelessWidget {
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               gap: 24,
               startIcon: const Icon(Icons.search),
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),

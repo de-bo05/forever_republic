@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:forever_republic/pages/phsyical_mobile/PrimaryScreenPhysicalMobilePage.dart';
 import 'package:forever_republic/supabase/supabase_config.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'components/CustomOverrides.dart';
 import 'components/CustomProject.dart';
@@ -21,7 +22,10 @@ void main() async {
   ]);
 
   // Supabase
-  await SupabaseConfig.initialize;
+  await SupabaseConfig.initialize.onError((error, stackTrace){
+
+    return Supabase.instance;
+  });
 
   // Local Database
   var localDatabase = LocalDatabase();

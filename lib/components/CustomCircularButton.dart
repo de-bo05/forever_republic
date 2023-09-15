@@ -96,6 +96,7 @@ class CustomCircularButtonState extends State<CustomCircularButton> {
                   ),
                 )
               : Align(
+            alignment: Alignment.centerLeft,
                   child: Icon(
                   widget.icon,
                   size: widget.iconSize,

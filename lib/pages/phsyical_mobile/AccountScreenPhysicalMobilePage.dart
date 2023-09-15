@@ -22,14 +22,7 @@ class AccountScreenPhysicalMobilePage extends StatefulWidget {
 
 class _AccountScreenPhysicalMobilePageState
     extends State<AccountScreenPhysicalMobilePage> {
-  void onTapSearch() {}
 
-  void onTapCart() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (builder) => const CartScreenPhysicalMobilePage()));
-  }
 
   void onTapLogin() {
     Navigator.push(
@@ -51,10 +44,8 @@ class _AccountScreenPhysicalMobilePageState
       body: Column(
         children: [
           // Account Title
-          CustomShortSearchableTitleCard(
+          const CustomShortSearchableTitleCard(
             pageTitle: "Account",
-            onTapSearch: onTapSearch,
-            onTapCart: onTapCart,
           ),
           // Account Login
           CustomUserTitleCard(

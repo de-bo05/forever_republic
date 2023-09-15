@@ -24,40 +24,40 @@ class PhysicalMobileAbout extends StatelessWidget {
         child:  Column(
           children: [
 
-            // Address Book
+            // FR Services
             CustomCollectionCard(
               onClick: clickFRServices,
               clickedColor: Colors.grey.withOpacity(0.3),
               text: "FR Services",
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               gap: 24,
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
             ),
 
-            // Account Management
+            // Faq
             CustomCollectionCard(
               onClick: clickFaq,
               clickedColor: Colors.grey.withOpacity(0.3),
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "FAQ",
               gap: 24,
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
             ),
 
-            // Close Account
+            // Privacy Policy
             CustomCollectionCard(
               onClick: clickPrivacyPolicy,
               clickedColor: Colors.grey.withOpacity(0.3),
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Privacy Policy",
               gap: 24,
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),

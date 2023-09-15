@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/components/CustomOnClickContainer.dart';
 
 import '../../collections/forever_republic/PhysicalMobileAbout.dart';
+import '../../collections/forever_republic/PhysicalMobileAppInfo.dart';
+import '../../collections/forever_republic/PhysicalMobileSystemSetting.dart';
 import '../../components/CustomFullSearchableTitleCard.dart';
 import '../../components/CustomShortSearchableTitleCard.dart';
 import '../../main.dart';
@@ -18,15 +20,8 @@ class HelpScreenPhysicalMobilePage extends StatefulWidget {
 
 class _HelpScreenPhysicalMobilePageState
     extends State<HelpScreenPhysicalMobilePage> {
-  void onTapSearch() {}
   void onTapLiveChat() {}
 
-  void onTapCart() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (builder) => const CartScreenPhysicalMobilePage()));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +30,8 @@ class _HelpScreenPhysicalMobilePageState
       body: Column(
         children: [
           // Help Title
-          CustomShortSearchableTitleCard(
+          const CustomShortSearchableTitleCard(
             pageTitle: "Help",
-            onTapSearch: onTapSearch,
-            onTapCart: onTapCart,
           ),
 
           //   Start Live Chat
@@ -104,7 +97,64 @@ class _HelpScreenPhysicalMobilePageState
           ),
 
 
+          // System Settings
+          const SizedBox(height: 16,),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: Row(
+              children: [
+                Text(
+                  "SETTINGS",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(getDarkGreyColor)),
+                ),
+              ],
+            ),
+          ),
 
+          //   System Setting Collections
+          const SizedBox(
+            height: 8,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                Expanded(child: PhysicalMobileSystemSetting()),
+              ],
+            ),
+          ),
+
+
+          // App Info
+          const SizedBox(height: 16,),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: Row(
+              children: [
+                Text(
+                  "APP INFO",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(getDarkGreyColor)),
+                ),
+              ],
+            ),
+          ),
+
+          //   App Info Collections
+          const SizedBox(
+            height: 8,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                Expanded(child: PhysicalMobileAppInfo()),
+              ],
+            ),
+          ),
 
 
         ],

@@ -3,18 +3,40 @@ import 'package:flutter/material.dart';
 import 'package:forever_republic/components/CustomCollectionCard.dart';
 import 'package:hive/hive.dart';
 
+import '../../pages/phsyical_mobile/AccountManagementScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/AddressBookScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/CloseAccountScreenPhysicalMobilePage.dart';
+
 class PhysicalMobileUserSetting extends StatelessWidget {
   const PhysicalMobileUserSetting({super.key});
 
 
-  void clickAddressBook(){}
-  void clickCloseAccount(){}
-  void clickRatingAndReview(){}
 
 
 
   @override
   Widget build(BuildContext context) {
+
+    void clickAddressBook(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const AddressBookScreenPhysicalMobilePage()));
+    }
+    void clickCloseAccount(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const AccountManagementScreenPhysicalMobilePage()));
+    }
+    void clickRatingAndReview(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (builder) => const CloseAccountScreenPhysicalMobilePage()));
+    }
+
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
       child: Container(
@@ -31,7 +53,7 @@ class PhysicalMobileUserSetting extends StatelessWidget {
               text: "Address book",
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               gap: 24,
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -44,7 +66,7 @@ class PhysicalMobileUserSetting extends StatelessWidget {
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Account Management",
               gap: 24,
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),
@@ -57,7 +79,7 @@ class PhysicalMobileUserSetting extends StatelessWidget {
               textStyle: const TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
               text: "Close Account",
               gap: 24,
-              endIcon: const Icon(
+              endWidget: const Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: 15,
               ),

@@ -5,7 +5,7 @@ import 'package:forever_republic/components/CustomOnClickContainer.dart';
 class CustomCollectionCard extends StatelessWidget {
   final Icon? startIcon;
   final String text;
-  final Icon? endIcon;
+  final Widget? endWidget;
   final TextStyle? textStyle;
   final double gap;
   final Color? defaultColor;
@@ -16,7 +16,7 @@ class CustomCollectionCard extends StatelessWidget {
       {super.key,
       this.startIcon,
       required this.text,
-      this.endIcon,
+      this.endWidget,
       this.onClick,
       this.textStyle,
        this.gap = 16, this.defaultColor, this.clickedColor});
@@ -50,7 +50,7 @@ class CustomCollectionCard extends StatelessWidget {
             ),
 
             // End Icon
-            endIcon ?? const SizedBox()
+            endWidget ?? const SizedBox()
           ],
         ),
       ),
