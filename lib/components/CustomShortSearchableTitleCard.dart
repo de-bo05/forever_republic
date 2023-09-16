@@ -7,12 +7,13 @@ import 'CustomCircularButton.dart';
 
 class CustomShortSearchableTitleCard extends StatelessWidget {
   final String pageTitle;
+  final bool showAttachedCollection;
   final Function()? onBackPressed;
 
   const CustomShortSearchableTitleCard(
       {super.key,
       required this.pageTitle,
-      this.onBackPressed});
+      this.onBackPressed,  this.showAttachedCollection = true});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class CustomShortSearchableTitleCard extends StatelessWidget {
                   fontSize: 18),
             )),
 
-            const SearchAndCartIconCollection()
+             showAttachedCollection ? const SearchAndCartIconCollection() : const SizedBox()
 
           ],
         ),

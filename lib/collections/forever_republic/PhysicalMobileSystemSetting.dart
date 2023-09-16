@@ -4,6 +4,8 @@ import 'package:forever_republic/components/CustomCollectionCard.dart';
 import 'package:hive/hive.dart';
 
 import '../../main.dart';
+import '../../pages/phsyical_mobile/CountryScreenPhysicalMobilePage.dart';
+import '../../pages/phsyical_mobile/LanguageScreenPhysicalMobilePage.dart';
 
 class PhysicalMobileSystemSetting extends StatefulWidget {
   const PhysicalMobileSystemSetting({super.key});
@@ -18,9 +20,19 @@ class _PhysicalMobileSystemSettingState extends State<PhysicalMobileSystemSettin
   String language = "ENGLISH";
   bool pushNotificationAllowed = false;
 
-  void clickCountry(){}
+  void clickCountry(){
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (builder) => const CountryScreenPhysicalMobilePage()));
+  }
 
-  void clickLanguage(){}
+  void clickLanguage(){
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (builder) => const LanguageScreenPhysicalMobilePage()));
+  }
   void changePushNotificationStatus(bool value) {
 
     setState(() {
